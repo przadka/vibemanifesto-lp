@@ -45,6 +45,8 @@ This site is designed to be deployed to GitHub Pages:
 1. Push changes to the `main` branch of your repository
 2. GitHub Pages will automatically build and deploy the site
 
+GitHub Repository: [https://github.com/przadka/vibemanifesto-lp/](https://github.com/przadka/vibemanifesto-lp/)
+
 ## Local Development
 
 To work on this site locally:
@@ -65,6 +67,6 @@ vibemanifesto-lp/
 
 ## License
 
-© 2025 The Vibe Coding Manifesto Authors
+ 2025 The Vibe Coding Manifesto Authors
 
 This declaration may be freely copied in any form, but only in its entirety with this notice.
