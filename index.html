@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vibe Manifesto - A philosophy for a new generation of developers">
+    <meta property="og:title" content="Vibe Manifesto">
+    <meta property="og:description" content="A philosophy for a new generation of developers">
+    <meta property="og:url" content="https://vibemanifesto-lp.github.io/">
+    <meta property="og:type" content="website">
+    <title>Vibe Manifesto</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#faf5ff',
+                            100: '#f3e8ff',
+                            200: '#e9d5ff',
+                            300: '#d8b4fe',
+                            400: '#c084fc',
+                            500: '#a855f7',
+                            600: '#9333ea',
+                            700: '#7e22ce',
+                            800: '#6b21a8',
+                            900: '#581c87',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Alpine.js -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <!-- Custom styles -->
+    <style>
+        [x-cloak] { display: none !important; }
+        
+        .prose h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            font-weight: 700;
+        }
+        
+        .prose p {
+            margin-bottom: 1em;
+        }
+        
+        .prose ul {
+            list-style-type: disc;
+            margin-left: 1.5em;
+            margin-bottom: 1em;
+        }
+        
+        .manifesto-item {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 0.75em;
+        }
+        
+        .manifesto-item span:first-child {
+            flex-shrink: 0;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" 
+      :class="darkMode ? 'dark bg-gray-900 text-gray-100' : 'bg-white text-gray-800'"
+      x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))">
+    
+    <div class="min-h-screen flex flex-col">
+        <header class="py-16 md:py-24 px-6 text-center bg-gradient-to-b from-purple-50 to-white dark:from-purple-900/20 dark:to-gray-900">
+            <div class="container mx-auto max-w-4xl">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-display mb-4">
+                    Manifesto for Vibe Development
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 text-gray-600 dark:text-gray-300">
+                    A new way of building software—faster, iterative, and AI-augmented.
+                </p>
+                
+                <button x-cloak @click="darkMode = !darkMode" 
+                        class="fixed top-4 right-4 p-2 rounded-lg bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300">
+                    <svg x-show="!darkMode" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                    <svg x-show="darkMode" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                </button>
+            </div>
+        </header>
+        
+        <main id="manifesto" class="flex-grow py-8 px-6">
+            <div class="container mx-auto max-w-3xl prose dark:prose-invert prose-lg">
+                <h1 class="text-3xl md:text-4xl font-bold font-display">Manifesto for Vibe Development</h1>
+                
+                <p class="lead text-xl">
+                    We are uncovering a new way of building software by embracing AI, iteration, and human intuition. 
+                    Through this work, we have come to value:
+                </p>
+                
+                <div class="my-8">
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Flow over friction</strong> – Ride the wave, don't fight it.</span>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Iteration over perfection</strong> – Perfection is obsolete if you can always reroll.</span>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Augmentation over automation</strong> – AI is a collaborator, not a replacement.</span>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Product thinking over code crafting</strong> – What matters is what you build, not how you write it.</span>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Rerolling over debugging</strong> – If fixing takes too long, regenerate.</span>
+                    </div>
+                    <div class="manifesto-item">
+                        <span class="text-primary-500 text-xl">💜</span>
+                        <span><strong>Human taste over technical constraints</strong> – The best tech serves great taste, not the other way around.</span>
+                    </div>
+                </div>
+                
+                <p>That is, while there is value in the items on the right, we value the items on the left more.</p>
+                
+                <h2 class="text-2xl md:text-3xl">Principles of Vibe Development</h2>
+                
+                <ol class="list-decimal pl-8 space-y-4">
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Focus on the problem, not the code.</strong> 
+                        Code is just the medium—what matters is solving the right problems.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Taste is the ultimate filter.</strong> 
+                        AI can generate infinite solutions, but only human judgment can pick the right one.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Systems thinking beats syntax mastery.</strong> 
+                        The best engineers don't just code—they architect, evaluate, and iterate.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">AI is your co-creator.</strong> 
+                        The best engineers wield AI to amplify their impact, not just automate tasks.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Speed is the new craftsmanship.</strong> 
+                        The highest priority is delivering valuable software continuously and exponentially faster.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Deliver in minutes, not days.</strong> 
+                        AI enables a pace where shipping happens as fast as thinking.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Change is fuel.</strong> 
+                        Welcome new requirements at any stage—flexibility is a superpower, not a burden.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Simplicity scales.</strong> 
+                        The best way to build fast and flexibly is to maximize what you don't build.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Code is disposable.</strong> 
+                        If it doesn't work, reroll. Don't get attached.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Favor reinvention over patchwork.</strong> 
+                        When a solution no longer meets our needs, we embrace regeneration to achieve greater clarity and efficiency.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Optimize for acceleration.</strong> 
+                        The future belongs to those who build with exponential speed in mind.
+                    </li>
+                    <li>
+                        <strong class="text-primary-600 dark:text-primary-400">Evolve constantly.</strong> 
+                        Teams should reflect, adapt, and upgrade their tools and workflows regularly.
+                    </li>
+                </ol>                          
+                                
+            </div>
+        </main>
+        
+        <footer class="py-8 px-6 border-t border-purple-100 dark:border-purple-900/30">
+            <div class="container mx-auto max-w-3xl flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-4 md:mb-0">
+                    &copy; 2025 The Vibe Coding Manifesto Authors<br>
+                    <span class="text-xs">This declaration may be freely copied in any form, but only in its entirety with this notice.</span>
+                </p>
+                <a href="https://github.com/vibemanifesto-lp/vibemanifesto-lp.github.io" 
+                   class="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 flex items-center">
+                    <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd" />
+                    </svg>
+                    GitHub Repository
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

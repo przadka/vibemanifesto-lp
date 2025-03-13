@@ -1,0 +1,18 @@
+app = "vibemanifesto-lp"
+primary_region = "fra"  # Frankfurt, but you can change this to a region closer to your users
+
+[build]
+  # Uses the Dockerfile in your project
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 1000
+    soft_limit = 500
