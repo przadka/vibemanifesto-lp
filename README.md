@@ -1,6 +1,6 @@
 # Vibe Manifesto Landing Page
 
-A minimalist, high-performance static landing page for **Vibe Manifesto**. This page displays the **Manifesto for Vibe Development** in a clean, readable format with a modern aesthetic.
+A minimalist, high-performance static landing page for **Vibe Manifesto**. This page displays the **Manifesto for Vibe Coding** in a clean, readable format with a modern aesthetic.
 
 ## Features
 
